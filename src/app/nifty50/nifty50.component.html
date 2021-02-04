@@ -1,0 +1,22 @@
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>     
+      <th scope="col">Title</th>
+      <th scope="col">Body</th>
+      <th scope="col">User Id</th>
+     
+    </tr>
+  </thead>
+  <tbody >
+    <tr *ngFor="let datas of totalAngularPackages  | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
+      <td>{{datas.id}}</td>      
+      <td>{{datas.title}}</td>
+      <td>{{datas.body}}</td>
+      <th >{{datas.userId}}</th>
+     
+    </tr>    
+  </tbody>
+  
+</table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
